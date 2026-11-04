@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katalog Buku - Toko Buku Tinta</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="stok">
+  <header class="situs">
+    <div class="logo">Toko Buku <span>Tinta</span></div>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html" class="aktif">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <button id="btnLogout" class="btn kuning kecil" type="button">Keluar</button>
+  </header>
+  <main>
+    <h1>Informasi Stok / Katalog</h1>
+    <section class="kartu" aria-label="Daftar buku">
+      <div class="tabel-gulir">
+        <table>
+          <thead>
+            <tr>
+              <th>Sampul</th>
+              <th>Kode</th>
+              <th>Judul</th>
+              <th>Penulis</th>
+              <th>Kategori</th>
+              <th>Harga</th>
+              <th>Stok</th>
+            </tr>
+          </thead>
+          <tbody id="bodyStok"></tbody>
+        </table>
+      </div>
+      <p style="font-size:.85rem">Stok kurang dari 10 ditandai merah.</p>
+    </section>
+    <section class="kartu" aria-labelledby="jTambah">
+      <h2 id="jTambah">Tambah Stok Buku Baru</h2>
+      <form id="formStok" novalidate>
+        <div class="baris">
+          <div><label for="judul">Judul</label><input id="judul"></div>
+          <div><label for="penulis">Penulis</label><input id="penulis"></div>
+          <div><label for="kategori">Kategori</label>
+            <select id="kategori">
+              <option>Teknologi</option>
+              <option>Desain</option>
+              <option>Bisnis</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+        </div>
+        <div class="baris">
+          <div><label for="harga">Harga (Rp)</label><input type="number" id="harga" min="1"></div>
+          <div><label for="stok">Jumlah stok</label><input type="number" id="stok" min="0"></div>
+        </div>
+        <p class="error" id="errStok"></p>
+        <button class="btn" type="submit">Tambah ke tabel</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>Tugas UTS Pemrograman Web 1 - Toko Buku Tinta</p>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

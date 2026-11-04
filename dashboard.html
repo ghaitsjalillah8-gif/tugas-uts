@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Toko Buku Tinta</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="dashboard">
+  <header class="situs">
+    <div class="logo">Toko Buku <span>Tinta</span></div>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html" class="aktif">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <button id="btnLogout" class="btn kuning kecil" type="button">Keluar</button>
+  </header>
+  <main>
+    <section class="kartu sapaan" aria-labelledby="greeting">
+      <h1 id="greeting">Selamat datang</h1>
+      <p>Pilih menu di bawah untuk mulai bekerja.</p>
+    </section>
+    <section aria-label="Menu utama" class="menu">
+      <a class="btn" href="stok.html">Informasi Stok/Katalog</a>
+      <a class="btn" href="tracking.html">Tracking Pengiriman</a>
+      <a class="btn" href="checkout.html">Laporan Pemesanan</a>
+      <button class="btn" type="button" id="btnHistory">History Transaksi</button>
+    </section>
+  </main>
+  <div class="modal" id="modalHistory" hidden role="dialog" aria-modal="true" aria-labelledby="jHist">
+    <div class="modal-isi lebar">
+      <h2 id="jHist">History Transaksi</h2>
+      <div class="tabel-gulir">
+        <table>
+          <thead>
+            <tr>
+              <th>No. DO</th>
+              <th>Tanggal</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="bodyHistory"></tbody>
+        </table>
+      </div>
+      <p><button class="btn garis" type="button" data-close>Tutup</button></p>
+    </div>
+  </div>
+  <footer>
+    <p>Tugas UTS Pemrograman Web 1 - Toko Buku Tinta</p>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pemesanan - Toko Buku Tinta</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="checkout">
+  <header class="situs">
+    <div class="logo">Toko Buku <span>Tinta</span></div>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html" class="aktif">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <button id="btnLogout" class="btn kuning kecil" type="button">Keluar</button>
+  </header>
+  <main>
+    <h1>Pemesanan Buku</h1>
+    <section class="kartu" aria-labelledby="jItem">
+      <h2 id="jItem">Data Pesanan</h2>
+      <div class="baris">
+        <div><label for="pilihBuku">Buku</label><select id="pilihBuku"></select></div>
+        <div><label for="qty">Jumlah</label><input type="number" id="qty" min="1" value="1"></div>
+        <div style="align-self:end"><button class="btn" type="button" id="btnTambah">Tambah ke pesanan</button></div>
+      </div>
+      <p class="error" id="errItem"></p>
+      <div class="tabel-gulir">
+        <table>
+          <thead>
+            <tr>
+              <th>Judul</th>
+              <th>Harga</th>
+              <th>Jumlah</th>
+              <th>Subtotal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="bodyKeranjang"></tbody>
+          <tfoot>
+            <tr>
+              <th colspan="3">Total belanja</th>
+              <th colspan="2" id="totalBelanja">Rp 0</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+    <section class="kartu" aria-labelledby="jPemesan">
+      <h2 id="jPemesan">Data Pemesan dan Pembayaran</h2>
+      <form id="formCheckout" novalidate>
+        <div class="baris">
+          <div><label for="nama">Nama pemesan</label><input id="nama"></div>
+          <div><label for="hp">Nomor HP</label><input id="hp" inputmode="numeric" placeholder="081234567890"></div>
+        </div>
+        <label for="alamat">Alamat pengiriman</label><textarea id="alamat" rows="3"></textarea>
+        <div class="baris">
+          <div><label for="ekspedisi">Ekspedisi</label>
+            <select id="ekspedisi">
+              <option value="JNE" data-ongkir="15000">JNE Reguler - Rp 15.000</option>
+              <option value="J&amp;T" data-ongkir="18000">J&amp;T Reguler - Rp 18.000</option>
+              <option value="SiCepat" data-ongkir="30000">SiCepat Express - Rp 30.000</option>
+            </select>
+          </div>
+          <div><label for="bayar">Metode pembayaran</label>
+            <select id="bayar">
+              <option value="">Pilih...</option>
+              <option>Transfer Bank</option>
+              <option>E-Wallet</option>
+              <option>Bayar di Tempat (COD)</option>
+            </select>
+          </div>
+        </div>
+        <p class="error" id="errCheckout"></p>
+        <button class="btn kuning" type="submit">Buat pesanan</button>
+      </form>
+    </section>
+  </main>
+  <div class="modal" id="modalSukses" hidden role="dialog" aria-modal="true" aria-labelledby="jSukses">
+    <div class="modal-isi">
+      <h2 id="jSukses">Pesanan berhasil dibuat</h2>
+      <p id="infoDO"></p>
+      <a class="btn" href="tracking.html">Lacak pesanan</a>
+      <button class="btn garis" type="button" data-close>Tutup</button>
+    </div>
+  </div>
+  <footer>
+    <p>Tugas UTS Pemrograman Web 1 - Toko Buku Tinta</p>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

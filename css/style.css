@@ -1,0 +1,53 @@
+/* style.css - tema "Toko Buku Tinta": biru tinta, teal, aksen kuning */
+:root { --tinta:#1B2A41; --teal:#0E7C86; --kuning:#F2A541; --latar:#F3F6FA; --putih:#fff; --garis:#D5DDE8; --merah:#B3261E; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: "Segoe UI", system-ui, sans-serif; background:var(--latar); color:var(--tinta); line-height:1.5; }
+h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; margin:0 0 .5rem; }
+header.situs { background:var(--tinta); color:#fff; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; padding:.8rem 1.5rem; }
+header.situs .logo { font-family:Georgia,serif; font-size:1.3rem; margin-right:auto; }
+header.situs .logo span { color:var(--kuning); }
+nav a { color:#cfe0f0; text-decoration:none; margin-right:1rem; padding-bottom:2px; }
+nav a:hover, nav a.aktif { color:#fff; border-bottom:2px solid var(--kuning); }
+main { max-width:1000px; margin:1.5rem auto; padding:0 1rem; }
+footer { text-align:center; padding:1.5rem; color:#5b6b80; font-size:.85rem; }
+.kartu { background:var(--putih); border:1px solid var(--garis); border-radius:8px; padding:1.25rem; margin-bottom:1.25rem; }
+.btn { background:var(--teal); color:#fff; border:0; border-radius:6px; padding:.6rem 1.1rem; font-size:1rem; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn:hover { background:#0a626a; }
+.btn.kuning { background:var(--kuning); color:var(--tinta); }
+.btn.garis { background:transparent; color:var(--teal); border:1px solid var(--teal); }
+.btn.kecil { padding:.25rem .6rem; font-size:.85rem; }
+.btn.bahaya { background:var(--merah); }
+:focus-visible { outline:3px solid var(--kuning); outline-offset:2px; }
+label { display:block; font-weight:600; margin:.7rem 0 .2rem; }
+input, select, textarea { width:100%; padding:.55rem .7rem; border:1px solid var(--garis); border-radius:6px; font:inherit; background:#fff; }
+.baris { display:flex; flex-wrap:wrap; gap:1rem; } .baris > * { flex:1 1 200px; }
+.error { color:var(--merah); font-size:.88rem; min-height:1.2rem; margin:.2rem 0; }
+table { width:100%; border-collapse:collapse; background:#fff; }
+th, td { padding:.6rem .7rem; text-align:left; border-bottom:1px solid var(--garis); vertical-align:middle; }
+th { background:var(--tinta); color:#fff; font-weight:600; }
+td input[type=number] { width:80px; }
+.tabel-gulir { overflow-x:auto; }
+tr.stok-tipis td:last-child { color:var(--merah); font-weight:700; }
+/* login */
+.halaman-login { min-height:100vh; display:grid; place-items:center; background:linear-gradient(135deg,var(--tinta) 55%,var(--teal)); padding:1rem; }
+.kotak-login { background:#fff; width:100%; max-width:400px; border-radius:10px; padding:2rem; border-top:6px solid var(--kuning); }
+.kotak-login .aksi { display:flex; gap:.6rem; margin-top:1rem; } .kotak-login .aksi .btn { flex:1; }
+/* dashboard */
+.sapaan { background:var(--tinta); color:#fff; border-left:6px solid var(--kuning); }
+.menu { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1rem; }
+.menu .btn { padding:1.6rem 1rem; font-size:1.1rem; text-align:center; font-family:Georgia,serif; }
+/* modal */
+.modal { position:fixed; inset:0; background:rgba(27,42,65,.6); display:grid; place-items:center; padding:1rem; z-index:10; }
+.modal[hidden] { display:none; }
+.modal-isi { background:#fff; border-radius:10px; padding:1.5rem; width:100%; max-width:440px; max-height:90vh; overflow:auto; animation:muncul .18s ease-out; }
+.modal-isi.lebar { max-width:640px; }
+@keyframes muncul { from { transform:scale(.96); opacity:0; } to { transform:none; opacity:1; } }
+/* tracking */
+.progres { background:var(--garis); border-radius:20px; height:16px; overflow:hidden; margin:1rem 0; }
+#bar { height:100%; width:0; background:linear-gradient(90deg,var(--teal),var(--kuning)); transition:width .6s; }
+.langkah { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.5rem; }
+.langkah li { padding:.3rem .8rem; border-radius:20px; background:var(--garis); font-size:.88rem; }
+.langkah li.selesai { background:var(--teal); color:#fff; }
+dl { display:grid; grid-template-columns:max-content 1fr; gap:.4rem 1.2rem; } dt { font-weight:600; } dd { margin:0; }
+@media (max-width:600px) { header.situs { padding:.8rem 1rem; } }
+@media (prefers-reduced-motion:reduce) { .modal-isi, #bar { animation:none; transition:none; } }
